@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- parent/-->
+
+    <groupId>de.cismet</groupId>
+    <artifactId>global-parent</artifactId>
+    <version>2.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>global parent POM</name>
+    <description>Global parent POM of the cismet GmbH and the Environmental Informatics Group that shall be used for all cismet and EIG developement</description>
+    <url />
+    <inceptionYear>2012</inceptionYear>
+    <organization />
+    <licenses>
+        <license>
+            <name>GNU Lesser Public License</name>
+            <distribution>repo</distribution>
+            <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>mscholl</id>
+            <name>Martin Scholl</name>
+            <email>martin.scholl@cismet.de</email>
+            <organization>cismet GmbH</organization>
+        </developer>
+    </developers>
+    <contributors />
+
+    <mailingLists />
+
+    <prerequisites>
+        <maven>3</maven>
+    </prerequisites>
+
+    <!-- modules/-->
+
+    <scm>
+        <connection>https://github.com/cismet/global-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:cismet/global-parent.git</developerConnection>
+        <url>https://github.com/cismet/global-parent</url>
+    </scm>
+    <issueManagement>
+        <system>Mantis</system>
+        <url>http://bugs.cismet.de</url>
+    </issueManagement>
+    <ciManagement />
+    <distributionManagement>
+        <repository>
+            <id>cismet-repo</id>
+            <name>cismet-libs-releases-local</name>
+            <url>https://repo.cismet.de/cismet-libs-releases-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>cismet-repo</id>
+            <name>cismet-libs-snapshots-local</name>
+            <url>https://repo.cismet.de/cismet-libs-snapshots-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <deploy.skip>true</deploy.skip>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.maven.surefire</groupId>
+                <artifactId>surefire-junit4</artifactId>
+                <version>2.12</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.10</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>cismet-repo</id>
+            <url>https://repo.cismet.de/repo</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+                <updatePolicy>daily</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+                <updatePolicy>interval:60</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>cismet-repo</id>
+            <url>https://repo.cismet.de/repo</url>
+            <releases>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+                <updatePolicy>daily</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <checksumPolicy>warn</checksumPolicy>
+                <updatePolicy>interval:60</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.5.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <!-- please add the reason why the default is explicitely specified here -->
+                    <compilerArguments>
+                        <sourcepath>${project.basedir}/src/main/java</sourcepath>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting />
+
+    <profiles/>
+</project>
