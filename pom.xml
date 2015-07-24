@@ -6,7 +6,7 @@
 
     <groupId>de.cismet</groupId>
     <artifactId>global-parent</artifactId>
-    <version>3.0</version>
+    <version>3.0.1</version>
     <packaging>pom</packaging>
 
     <name>global parent POM</name>
@@ -47,7 +47,8 @@
         <connection>https://github.com/cismet/global-parent.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/global-parent.git</developerConnection>
         <url>https://github.com/cismet/global-parent</url>
-    </scm>
+      <tag>v3.0.1</tag>
+  </scm>
     <issueManagement>
         <system>GitHub</system>
         <url>https://github.com/cismet/global-parent/issues</url>
@@ -154,6 +155,10 @@
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.2</version>
             </plugin>
         </plugins>
     </build>
