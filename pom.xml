@@ -47,7 +47,8 @@
         <connection>https://github.com/cismet/global-parent.git</connection>
         <developerConnection>scm:git:git@github.com:cismet/global-parent.git</developerConnection>
         <url>https://github.com/cismet/global-parent</url>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
     <issueManagement>
         <system>GitHub</system>
         <url>https://github.com/cismet/global-parent/issues</url>
